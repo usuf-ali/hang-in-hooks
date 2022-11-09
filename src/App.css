@@ -33,6 +33,16 @@ button{
   transition: all .1s ease;
   display: inline-block;
 }
+.btn{
+  display: block;
+  background: #161b2a;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.counter{
+  display: flex;
+}
 button:hover{
   transform: translateY(-3px);
 }
