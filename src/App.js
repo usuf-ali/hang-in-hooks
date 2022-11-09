@@ -1,8 +1,10 @@
 import { useReducer } from 'react';
 import './App.css';
+
 const initVal = {
   counter: 1
 };
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'add':
@@ -15,14 +17,15 @@ const reducer = (state, action) => {
 };
 
 function App() {
-  const [state, dispatch] = useReducer(initVal, reducer);
+  const [state, dispatch] = useReducer(reducer, initVal);
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className='heading-1'> Hello World </h1>
-        <h2>{state.counter}</h2>
-        <button onClick={dispatch('add')}>+</button>
+        <button onClick={() => dispatch({ type: 'add' })}>+</button>
+        <h1>{state.counter}</h1>
+        <button onClick={() => dispatch({ type: 'sub' })}>-</button>
+        <h2>Hello World</h2>
       </header>
     </div>
   );
