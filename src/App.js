@@ -1,10 +1,7 @@
 import { useReducer } from 'react';
 import './App.css';
 
-const initVal = {
-  counter: 1
-};
-
+const initVal = { counter: 1 };
 const reducer = (state, action) => {
   switch (action.type) {
     case 'add':
