@@ -1,6 +1,8 @@
 import { useReducer } from 'react';
 import './App.css';
+import Posts from './components/Posts';
 
+import { useWindowWidth } from './hooks/useWindowWidth';
 const initVal = {
   counter: 1,
   counter2: 0
@@ -21,6 +23,7 @@ const reducer = (state, action) => {
 };
 function App() {
   const [state, dispatch] = useReducer(reducer, initVal);
+  const onSmallScreen = useWindowWidth();
   return (
     <div className="App">
       <header className="App-header">
@@ -36,7 +39,8 @@ function App() {
             <button onClick={() => dispatch({ type: 'sub2' })}>-</button>
           </div>
         </div>
-        <h2>Hello World</h2>
+        <h2>your Screen is now {onSmallScreen ? 'small' : 'large'}</h2>
+        <Posts />
       </header>
     </div>
   );
