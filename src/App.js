@@ -23,7 +23,9 @@ const reducer = (state, action) => {
 };
 function App() {
   const [state, dispatch] = useReducer(reducer, initVal);
-  const onSmallScreen = useWindowWidth();
+  const onSmallScreen = useWindowWidth(765);
+  const text = 'আমার সোনার বাংলা আমি কি তোমায় ভুলিতে পারি? তুমি যে সন্ধার আকাশের তারা;';
+
   return (
     <div className="App">
       <header className="App-header">
@@ -39,7 +41,10 @@ function App() {
             <button onClick={() => dispatch({ type: 'sub2' })}>-</button>
           </div>
         </div>
-        <h2>your Screen is now {onSmallScreen ? 'small' : 'large'}</h2>
+        <h2>your Screen is now {onSmallScreen ? 'Small' : 'large'}</h2>
+        <p>
+          {text}
+        </p>
         <Posts />
       </header>
     </div>
