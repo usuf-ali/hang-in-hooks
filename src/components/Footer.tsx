@@ -1,5 +1,5 @@
 
 //grepper typescript hello world
-const lifeTime: String = "Hello Guys";
-console.log(lifeTime);
+const helloWorld: string = "Hello Guys";
+console.log(helloWorld);
 //end grepper
