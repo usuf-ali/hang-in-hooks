@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
-
+import Memo from './components/Memo';
+import Reducer from './components/Reducer';
 const initVal = {
   counter: 1,
   counter2: 0
@@ -38,7 +38,8 @@ function App() {
             <button onClick={() => dispatch({ type: 'sub2' })}>-</button>
           </div>
         </div>
-        <Navbar />
+        <Reducer />
+        <Memo />
       </header>
     </div>
   );
