@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Post from "./Post";
 
 function Posts() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [post, setPost] = useState({});
   useEffect(() => {
-    fatch('https://jsnonplaceholder.typicode.com/posts/1')
+    fetch('https://jsonplaceholder.typicode.com/todos/5')
       .then((response) => response.json())
       .then((data) => {
         setLoading(false);
@@ -21,7 +22,7 @@ function Posts() {
 
   return (
     <div>
-      {loading ? 'Loading...' : post.title}
+      {loading ? 'Loading...' : <Post post={post} />}
       {error || null}
     </div>
   );

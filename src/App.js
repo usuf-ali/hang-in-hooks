@@ -1,6 +1,7 @@
 import { useReducer } from 'react';
 import './App.css';
-
+import Memo from './components/Memo';
+import Reducer from './components/Reducer';
 const initVal = {
   counter: 1,
   counter2: 0
@@ -21,6 +22,7 @@ const reducer = (state, action) => {
 };
 function App() {
   const [state, dispatch] = useReducer(reducer, initVal);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -36,7 +38,8 @@ function App() {
             <button onClick={() => dispatch({ type: 'sub2' })}>-</button>
           </div>
         </div>
-        <h2>Hello World</h2>
+        <Reducer />
+        <Memo />
       </header>
     </div>
   );
